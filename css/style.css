@@ -1,0 +1,618 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Oswald', sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../imagens/fundo.png") center/cover no-repeat;
+    opacity: 0.25;
+    z-index: -1;
+}
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 50px;
+}
+
+.menu{
+    position:relative;
+}
+
+.menu-btn{
+    background:none;
+    border:none;
+    color:#ff1b1b;
+    font-size:22px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.menu-dropdown{
+    display:none;
+    position:absolute;
+    top:45px;
+    left:0;
+    width:220px;
+    background:#111;
+    border:2px solid #ff1b1b;
+}
+
+.menu-dropdown a{
+    display:block;
+    padding:15px;
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid #333;
+}
+
+.menu-dropdown a:hover{
+    background:#ff1b1b;
+}
+
+.social{
+    display:flex;
+    gap:25px;
+}
+
+.social a{
+    color:white;
+    font-size:25px;
+}
+
+.social a:hover{
+    color:#ff1b1b;
+}
+
+/* HERO */
+.hero{
+    min-height:75vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px 80px;
+}
+
+.left-text{
+    width:20%;
+}
+
+.left-text p{
+    font-size:20px;
+}
+
+.left-text h3{
+    color:#ff1b1b;
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.center{
+    text-align:center;
+    width:60%;
+}
+
+.center h1{
+    font-size:95px;
+}
+
+.center h2{
+    color:#ff1b1b;
+    letter-spacing:4px;
+    font-size:28px;
+}
+
+.slogan{
+    margin-top:25px;
+    color:#ddd;
+    font-size:22px;
+}
+
+.right-text{
+    width:25%;
+    text-align:center;
+    background:#111;
+    border:2px solid #ff1b1b;
+    padding:30px;
+}
+
+.right-text h4{
+    margin-bottom:20px;
+    color:#ff1b1b;
+}
+
+.right-text h2{
+    margin:10px 0;
+}
+
+.right-text button{
+    margin-top:20px;
+    padding:15px 25px;
+    background:#ff1b1b;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    padding:50px;
+}
+
+.card{
+    width:220px;
+    height:220px;
+    background:#111;
+    border:2px solid #333;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+.card i{
+    font-size:55px;
+    color:#ff1b1b;
+    margin-bottom:20px;
+}
+
+.card:hover{
+    border-color:#ff1b1b;
+    transform:translateY(-8px);
+}
+
+/* EVENTO */
+.evento{
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    padding:60px 20px;
+    background:#111;
+    text-align:center;
+    border-top:3px solid #ff1b1b;
+}
+
+.evento h1{
+    font-size:60px;
+    color:#ff1b1b;
+}
+
+.sub-evento{
+    color:#bbb;
+    margin:15px 0 40px;
+    font-size:20px;
+}
+
+.main-event{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.lutador{
+    border:2px solid #ff1b1b;
+    padding:25px;
+    min-width:250px;
+}
+
+.versus{
+    font-size:50px;
+    color:#ff1b1b;
+    font-weight:bold;
+}
+
+.btn-reserva{
+    display:inline-block;
+    margin-top:40px;
+    background:#ff1b1b;
+    color:white;
+    text-decoration:none;
+    padding:15px 35px;
+}
+
+/* FOOTER */
+footer{
+    margin-top:80px;
+    padding:30px;
+    background:#111;
+    text-align:center;
+    border-top:2px solid #ff1b1b;
+}
+
+footer p{
+    color:#aaa;
+    margin:8px 0;
+}
+
+/* RESPONSIVO */
+@media(max-width:1000px){
+    .hero{
+        flex-direction:column;
+        gap:40px;
+        text-align:center;
+    }
+
+    .left-text,
+    .center,
+    .right-text{
+        width:100%;
+    }
+
+    .center h1{
+        font-size:60px;
+    }
+}
+
+.menu-dropdown{
+    display:none;
+    position:absolute;
+    top:45px;
+    left:0;
+    width:220px;
+    background:#111;
+    border:2px solid #ff1b1b;
+}
+
+.menu-dropdown.show{
+    display:block;
+}
+.titulo{
+    text-align:center;
+    color:#ff1b1b;
+    margin:30px 0;
+    font-size:50px;
+}
+
+.lista-comidas{
+    width:90%;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    padding-bottom:40px;
+}
+
+.item-cardapio{
+    width:250px;
+    background:#111;
+    border:2px solid #333;
+    text-align:center;
+    padding:15px;
+    transition:.3s;
+}
+
+.item-cardapio:hover{
+    border-color:#ff1b1b;
+    transform:translateY(-5px);
+}
+
+.item-cardapio img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:5px;
+}
+
+.item-cardapio h3{
+    margin-top:15px;
+    color:white;
+}
+.voltar{
+    padding:20px 40px;
+}
+
+.voltar a{
+    display:inline-block;
+    background:#111;
+    color:#ff1b1b;
+    text-decoration:none;
+    padding:12px 20px;
+    border:2px solid #ff1b1b;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.voltar a:hover{
+    background:#ff1b1b;
+    color:white;
+}
+/* ===== PÁGINA LUTAS ===== */
+
+.luta-principal{
+    max-width:900px;
+    margin:30px auto;
+    background:#111;
+    border:2px solid #ff1b1b;
+    padding:40px;
+    text-align:center;
+}
+
+.luta-principal h2{
+    font-size:40px;
+    margin:15px 0;
+}
+
+.luta-principal span{
+    display:block;
+    font-size:50px;
+    color:#ff1b1b;
+    font-weight:bold;
+}
+
+#principalHorario{
+    margin-top:15px;
+    color:#bbb;
+    font-size:20px;
+}
+
+.peso-container{
+    width:90%;
+    margin:40px auto;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.peso{
+    width:320px;
+    background:#111;
+    border:2px solid #333;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.peso:hover{
+    border-color:#ff1b1b;
+}
+
+.peso h3{
+    color:#ff1b1b;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.fight-card h2{
+    margin:10px 0;
+}
+
+.fight-card span{
+    display:block;
+    color:#ff1b1b;
+    font-size:30px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.fight-card p{
+    color:#bbb;
+    margin:15px 0;
+    font-size:18px;
+}
+/* ===== RESERVAS ===== */
+
+.formulario{
+    width:90%;
+    max-width:600px;
+    margin:40px auto;
+    background:#111;
+    border:2px solid #ff1b1b;
+    padding:40px;
+    text-align:center;
+}
+
+.formulario h1{
+    color:#ff1b1b;
+    margin-bottom:30px;
+    font-size:40px;
+}
+
+.formulario form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.formulario input,
+.formulario select{
+    padding:15px;
+    background:#1a1a1a;
+    border:2px solid #333;
+    color:white;
+    font-size:16px;
+    outline:none;
+}
+
+.formulario input:focus,
+.formulario select:focus{
+    border-color:#ff1b1b;
+}
+
+.formulario button{
+    margin-top:15px;
+    padding:15px;
+    background:#ff1b1b;
+    color:white;
+    border:none;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.formulario button:hover{
+    background:#cc0000;
+    transform:translateY(-2px);
+}
+/* ===== ÁREA VIP ===== */
+
+.vip{
+    width:90%;
+    max-width:600px;
+    margin:50px auto;
+    background:#111;
+    border:2px solid #ff1b1b;
+    padding:40px;
+    text-align:center;
+}
+
+.vip h2{
+    color:#ff1b1b;
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.vip ul{
+    list-style:none;
+    padding:0;
+    margin:20px 0;
+}
+
+.vip ul li{
+    background:#1a1a1a;
+    margin:10px 0;
+    padding:12px;
+    border:1px solid #333;
+    font-size:18px;
+}
+
+.vip button{
+    margin-top:25px;
+    padding:15px 25px;
+    background:#ff1b1b;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.vip button:hover{
+    background:#cc0000;
+    transform:translateY(-3px);
+}
+.btn-vip{
+    display:inline-block;
+    margin-top:25px;
+    padding:15px 25px;
+    background:#ff1b1b;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-vip:hover{
+    background:#cc0000;
+    transform:translateY(-3px);
+}
+/* ===== LOCALIZAÇÃO ===== */
+
+.localizacao{
+    width:90%;
+    max-width:800px;
+    margin:40px auto;
+    background:#111;
+    border:2px solid #ff1b1b;
+    padding:40px;
+    text-align:center;
+}
+
+.localizacao h2{
+    color:#ff1b1b;
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+.localizacao p{
+    color:white;
+    font-size:18px;
+    margin:10px 0;
+    line-height:1.6;
+}
+
+.localizacao iframe{
+    margin-top:25px;
+    border:2px solid #333;
+}
+/* ===== HERO MAIS LIMPO ===== */
+
+.hero{
+    min-height:65vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start; /* joga tudo mais pra cima */
+    padding:30px 60px;
+}
+
+/* central mais leve */
+.center{
+    margin-top:10px;
+}
+
+/* cards mais próximos do topo */
+.cards{
+    margin-top:10px;
+    padding:30px 50px;
+}
+.card{
+    width:220px;
+    height:200px;
+    background:rgba(17,17,17,0.85);
+    border:1px solid #333;
+    backdrop-filter: blur(4px);
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:#e10600;
+    transform:translateY(-5px);
+}
+/* SUBIR OS CARDS MAIS PARA CIMA */
+.cards{
+    margin-top:0;
+    padding-top:10px;
+}
+
+/* reduz espaço do hero também */
+.hero{
+    margin-bottom:10px;
+    padding-bottom:10px;
+}
+.center{
+    margin-bottom:0;
+}
+
+.hero{
+    min-height:55vh; /* diminui altura do topo */
+}

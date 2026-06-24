@@ -1,0 +1,260 @@
+const lutas = [
+{
+    lutador1:"Duplo Bacon",
+    lutador2:"Monstro do Hambúrguer",
+    hora:"20:00"
+},
+{
+    lutador1:"Smash Fighter",
+    lutador2:"Bacon Brutal",
+    hora:"20:30"
+},
+{
+    lutador1:"Cheddar King",
+    lutador2:"X-Tudo Supremo",
+    hora:"21:00"
+},
+{
+    lutador1:"Triple Smash",
+    lutador2:"Gigante Artesanal",
+    hora:"21:30"
+},
+{
+    lutador1:"Bacon Fighter",
+    lutador2:"Smash Kid",
+    hora:"22:00"
+}
+];
+
+let atual = 0;
+
+function trocarLuta(){
+
+    const lutador1 = document.getElementById("lutador1");
+    const lutador2 = document.getElementById("lutador2");
+    const horario = document.getElementById("horario");
+
+    if(!lutador1 || !lutador2 || !horario){
+        return;
+    }
+
+    lutador1.innerText = lutas[atual].lutador1;
+    lutador2.innerText = lutas[atual].lutador2;
+    horario.innerText = "HOJE ÀS " + lutas[atual].hora;
+
+    atual++;
+
+    if(atual >= lutas.length){
+        atual = 0;
+    }
+}
+
+trocarLuta();
+
+setInterval(trocarLuta, 10000);
+
+const botoes = document.querySelectorAll(".fight-card button");
+
+botoes.forEach(botao => {
+
+    botao.addEventListener("click", function(){
+
+        const luta =
+        this.parentElement.querySelectorAll("h2");
+
+        alert(
+            "🥊 Mesa reservada para:\n\n" +
+            luta[0].innerText +
+            " VS " +
+            luta[1].innerText +
+            "\n\nBoa luta e bom apetite!"
+        );
+
+    });
+
+});
+
+function abrirMenu(){
+
+    const menu =
+    document.getElementById("menuDropdown");
+
+    if(menu.style.display === "block"){
+        menu.style.display = "none";
+    }else{
+        menu.style.display = "block";
+    }
+
+}
+function abrirLutas(){
+
+    localStorage.setItem("lutador1",
+        document.getElementById("lutador1").innerText);
+
+    localStorage.setItem("lutador2",
+        document.getElementById("lutador2").innerText);
+
+    localStorage.setItem("horario",
+        document.getElementById("horario").innerText);
+
+    window.location.href = "lutas.html";
+}
+function abrirLutas(){
+
+    localStorage.setItem(
+        "lutador1",
+        document.getElementById("lutador1").innerText
+    );
+
+    localStorage.setItem(
+        "lutador2",
+        document.getElementById("lutador2").innerText
+    );
+
+    localStorage.setItem(
+        "horario",
+        document.getElementById("horario").innerText
+    );
+
+    window.location.href = "lutas.html";
+}
+function mostrarProduto(produto){
+    const detalhes = document.getElementById("detalhes");
+
+    if(produto==="monstro"){
+        detalhes.innerHTML = `
+            <img src="img/monstro.jpg" width="300">
+            <h2>🏆 Monstro do Hambúrguer</h2>
+            <p>4 carnes, cheddar, bacon e onion rings</p>
+            <h3>R$ 49,90</h3>
+        `;
+    }
+}
+function mostrarProduto(produto){
+    const detalhes = document.getElementById("detalhes");
+
+    if(produto==="monstro"){
+        detalhes.innerHTML = `
+            <img src="img/monstro.jpg">
+            <h2>🏆 Monstro do Hambúrguer</h2>
+            <p>4 carnes, cheddar, bacon e onion rings</p>
+            <h3>R$ 49,90</h3>
+        `;
+    }
+
+    if(produto==="bacon"){
+        detalhes.innerHTML = `
+            <img src="img/bacon.jpg">
+            <h2>🥈 Duplo Bacon</h2>
+            <p>2 carnes, cheddar e bacon extra</p>
+            <h3>R$ 34,90</h3>
+        `;
+    }
+
+    if(produto==="smash"){
+        detalhes.innerHTML = `
+            <img src="img/smash.jpg">
+            <h2>🥉 Smash Fighter</h2>
+            <p>Smash duplo com molho especial</p>
+            <h3>R$ 29,90</h3>
+        `;
+    }
+}
+function mostrarProduto(produto){
+    const detalhes = document.getElementById("detalhes");
+
+    const produtos = {
+        monstro: {
+            img:"imgagens/monstro.jpg",
+            nome:"🏆 Monstro do Hambúrguer",
+            desc:"4 carnes, cheddar, bacon e onion rings",
+            preco:"R$ 49,90"
+        },
+
+        bacon: {
+            img:"img/bacon.jpg",
+            nome:"🥈 Duplo Bacon",
+            desc:"2 carnes, cheddar e bacon extra",
+            preco:"R$ 34,90"
+        },
+
+        smash: {
+            img:"img/smash.jpg",
+            nome:"🥉 Smash Fighter",
+            desc:"Smash duplo com molho especial",
+            preco:"R$ 29,90"
+        },
+
+        brutal: {
+            img:"img/brutal.jpg",
+            nome:"🍔 Bacon Brutal",
+            desc:"3 carnes, cheddar e bacon duplo",
+            preco:"R$ 39,90"
+        },
+
+        xtudo: {
+            img:"img/xtudo.jpg",
+            nome:"🍔 X-Tudo Supremo",
+            desc:"Hambúrguer completo da casa",
+            preco:"R$ 42,90"
+        },
+
+        frango: {
+            img:"img/frango.jpg",
+            nome:"🍗 Frango Knockout",
+            desc:"Frango empanado crocante",
+            preco:"R$ 31,90"
+        },
+
+        hotdog: {
+            img:"img/hotdog.jpg",
+            nome:"🌭 Hot Dog Nocaute",
+            desc:"Salsicha artesanal, cheddar e molho especial",
+            preco:"R$ 24,90"
+        },
+
+        combo: {
+            img:"img/combo.jpg",
+            nome:"🥤 Combo Campeão",
+            desc:"Hambúrguer + Batata + Refrigerante",
+            preco:"R$ 54,90"
+        },
+
+        batata: {
+            img:"img/batata.jpg",
+            nome:"🍟 Batata Fatality",
+            desc:"Batata frita com cheddar e bacon",
+            preco:"R$ 22,90"
+        },
+
+        refri: {
+            img:"img/refri.jpg",
+            nome:"🥤 Refrigerante 600ml",
+            desc:"Coca-Cola, Guaraná ou Pepsi",
+            preco:"R$ 8,90"
+        },
+
+        brownie: {
+            img:"img/brownie.jpg",
+            nome:"🍫 Brownie Nocaute",
+            desc:"Brownie com calda de chocolate",
+            preco:"R$ 16,90"
+        },
+
+        milkshake: {
+            img:"img/milkshake.jpg",
+            nome:"🥤 Milk Shake Campeão",
+            desc:"Chocolate, Morango ou Ovomaltine",
+            preco:"R$ 19,90"
+        }
+    };
+
+    const item = produtos[produto];
+
+    detalhes.innerHTML = `
+        <img src="${item.img}" width="300">
+        <h2>${item.nome}</h2>
+        <p>${item.desc}</p>
+        <h3>${item.preco}</h3>
+    `;
+}
